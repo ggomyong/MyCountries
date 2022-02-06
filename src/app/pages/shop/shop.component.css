@@ -1,0 +1,13 @@
+.products {
+    width: 400px;
+}
+
+.product-icon {
+    font-size: 300px;
+}
+.product-image {
+    width: 350px;
+}
+.quantity-input {
+    margin-right: 10px;
+}

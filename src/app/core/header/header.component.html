@@ -1,0 +1,40 @@
+<mat-toolbar *ngIf="collapse==false" color="warn">
+    <a mat-button routerLink="/">
+      Steven's Next Amazon
+    </a>
+    <a mat-button routerLink="/who-we-are">
+      <mat-icon>face</mat-icon>
+      Who We Are
+    </a>
+  
+    <a mat-button routerLink="/buy-from-us">
+      <mat-icon>attach_money</mat-icon>
+      Buy From Us
+    </a>
+  
+    <a mat-button routerLink="/what-we-did">
+      <mat-icon>bubble_chart</mat-icon>
+      What We Did
+    </a>
+  
+    <app-shopping-cart></app-shopping-cart>
+  
+  </mat-toolbar>
+
+  <mat-toolbar *ngIf="collapse==true" color="warn">
+    <a mat-button clickhandeler="clickfunciont">
+      <mat-icon>menu</mat-icon>
+    </a>
+    <div *ngIf="toggle==true">
+      <mat-toolbar-row>
+        <a mat-button routerLink="/what-we-did">
+          <mat-icon>bubble_chart</mat-icon>
+          What We Did
+        </a>
+      </mat-toolbar-row>
+
+
+    </div>
+    <app-shopping-cart></app-shopping-cart>
+  
+  </mat-toolbar>

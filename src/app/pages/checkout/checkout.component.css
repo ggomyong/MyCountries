@@ -1,0 +1,26 @@
+#cart-summary {
+    width: 100%;
+}
+#totalPrice {
+    float: left;
+    margin-top: 8px;
+}
+#address {
+    margin-top: 20px;
+    width: 100%;
+}
+.half-width {
+    width: 50%;
+}
+.full-width {
+    width: 100%;
+}
+#city-field {
+    width: 34%;
+}
+#state-field {
+    width: 33%;
+}
+#zipcode-field{
+    width: 33%;
+}

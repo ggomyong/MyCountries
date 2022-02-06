@@ -1,0 +1,14 @@
+.images {
+    width: 350px;
+    float: left;
+    margin-right: 10px;
+}
+::ng-deep .mat-vertical-stepper-content {
+    visibility: visible !important;
+    height: 100% !important;
+}
+
+::ng-deep .mat-step-text-label {
+    font-size: 100px !important;
+    line-height: 100px !important;
+}

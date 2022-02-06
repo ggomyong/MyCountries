@@ -1,0 +1,61 @@
+<h1 id="totalPrice">{{totalPrice | currency}}</h1>
+<form id="paypalButton" name="paypalForm" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" (click)="handlePaypal()">
+    <input type="hidden" name="cmd" value="_xclick">
+    <input type="hidden" name="business" value="domado18she@gmail.com">
+    <input type="hidden" name="lc" value="US">
+    <input type="hidden" name="item_name" value="Yong's Bookstore Purchase">
+    <input type="hidden" name="amount" value="{{totalPrice}}">
+    <input type="hidden" name="currency_code" value="USD">
+    <input type="hidden" name="button_subtype" value="services">
+    <input type="hidden" name="no_note" value="0">
+    <input type="hidden" name="tax_rate" value="6.000">
+    <input type="hidden" name="shipping" value="22.00">
+    <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
+    <input type="hidden" name="address" value="{{streetAddress}} {{city}}, {{state}} {{zipCode}}">
+    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+<table id="cart-summary" mat-table [dataSource]="datasource" class="mat-elevation-z8">
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let product">{{product.name}}</td>
+    </ng-container>
+    <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef> Quantity </th>
+        <td mat-cell *matCellDef="let product">{{product.quantity}}</td>
+    </ng-container>
+    <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Price </th>
+        <td mat-cell *matCellDef="let product">{{product.price | currency}}</td>
+    </ng-container>
+    <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef> Total Price </th>
+        <td mat-cell *matCellDef="let product">{{product.total | currency}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
+
+<div class="half-width">
+    <form id="address" >
+        <h2>Destination</h2>
+        <mat-form-field class="full-width">
+          <mat-label>Street Address</mat-label>
+          <input name="streetAddress" id="streetAddress" type="text" matInput placeholder="1234 Mainstreet" [(ngModel)]="streetAddress">
+        </mat-form-field>
+        <mat-form-field id="city-field">
+            <mat-label>City</mat-label>
+            <input name="city" id="city" type="text" matInput placeholder="City" [(ngModel)]="city">
+          </mat-form-field>
+          <mat-form-field id="state-field">
+            <mat-label>State</mat-label>
+            <input name="state" id="state" type="text" matInput placeholder="State" [(ngModel)]="state">
+          </mat-form-field>
+          <mat-form-field id="zipcode-field">
+            <mat-label>Zip Code</mat-label>
+            <input name="zipCode" id="zipCode" type="number" matInput placeholder="Zip Code" [(ngModel)]="zipCode">
+          </mat-form-field>
+      </form>
+</div>
